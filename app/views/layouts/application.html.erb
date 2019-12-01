@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SpecialStyleFactoryLanding</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="inner-wrapper">
+        <%= yield %>
+      </div>
+    </div>
+    <canvas id="background"></canvas>
+
+    <script>
+      var granimInstance = new Granim({
+        element: '#background',
+        direction: 'diagonal',
+        isPausedWhenNotInView: true,
+        image : {
+            source: '<%= image_url 'bg.jpg' %>',
+            blendingMode: 'soft-light',
+            position: ['center', 'center'],
+            stretchMode: ['none', 'none']
+        },
+        states : {
+            "default-state": {
+                gradients: [
+                    ['#f077c5', '#05d19c'],
+                    ['#80d3fe', '#7ea0c4'],
+                    ['#FF6B6B', '#556270'],
+                    ['#80d3fe', '#7ea0c4']
+                ],
+                transitionSpeed: 7000
+            }
+        }
+    });
+    </script>
+  </body>
+</html>

@@ -33,3 +33,10 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+/public/uploads
+.env
+.erdconfig
+dump.rdb
+model-erd.pdf
+.ruby-version

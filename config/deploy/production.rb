@@ -1,4 +1,4 @@
-server '213.10.240.190:22', user: 'deploy', roles: %w{web app db}
+server '188.166.32.225', user: 'deploy', roles: %w(web app db)
 
 set :deploy_to, '/var/www/special-style-factory-landing/production'
 
